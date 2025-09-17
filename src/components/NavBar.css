@@ -23,16 +23,17 @@
 /* ===== Search ===== */
 .search {
   flex: 1;
-  margin: 0 15px; /* kasih jarak kiri-kanan */
+  margin: 0 10px; /* kasih jarak kiri-kanan */
   
 }
 
 .search input {
   width: 100%;
   padding: 6px 12px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
   font-size: 14px;
+  outline: none;
   
   
 }
@@ -73,7 +74,7 @@
   /* color: #ffffff; */
   border: none;
   background: none;
-  margin-left: 10px;
+  margin:0 5px;
   
 }
 
@@ -83,10 +84,11 @@
     /* display: none; search disembunyikan di mobile */
 
     order: 0;       /* pindah ke urutan paling bawah dalam flex */
-  flex: flex;     /* biar tidak memaksa space */
-  width: auto;    /* full width */
-  margin: 0px 5px;
-  padding: 0 10px;
+    flex: flex;     /* biar tidak memaksa space */
+    width: auto;    /* full width */
+    margin: 0px 5px;
+    padding: 0 10px;
+  
   
   }
 
@@ -128,7 +130,7 @@
   .menu-toggle {
     padding-top: 5px;
     display: block;
-    margin-left: 10px;
+    margin-left: 4px;
     
   }
 }
