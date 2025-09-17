@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 20px;
+  padding: 6px 10px;
   background: #ffffff;
   /* background: #611212; */
   border-bottom: 2px solid #e0e0e0;
@@ -15,7 +15,7 @@
 /* ===== Logo ===== */
 .logo {
   font-size: 23px;
-  font-weight: bold;
+  font-weight: 800;
   color: #333;
   /* color: #ffffff; */
 }
@@ -23,7 +23,7 @@
 /* ===== Search ===== */
 .search {
   flex: 1;
-  margin: 0 20px; /* kasih jarak kiri-kanan */
+  margin: 0 15px; /* kasih jarak kiri-kanan */
   
 }
 
@@ -31,7 +31,7 @@
   width: 100%;
   padding: 6px 12px;
   border: 1px solid #ddd;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 14px;
   
   
@@ -39,7 +39,7 @@
 
 /* ===== Nav Items ===== */
 .nav-items {
-    margin-left: 20px;
+    margin:0 15px;
   display: flex;
   gap: 0px;
 }
