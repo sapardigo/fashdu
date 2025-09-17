@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MdMenu, MdClose, MdAccountCircle } from "react-icons/md";
+import { MdMenu, MdClose } from "react-icons/md";  // , MdAccountCircle <- dikeluarkan dari dalam {}
 import "./NavBar.css";
 
 export default function NavBar() {
@@ -32,7 +32,7 @@ export default function NavBar() {
 
       {/* User + Hamburger */}
       <div className="actions">
-        <MdAccountCircle className="icon user" />
+        {/* <MdAccountCircle className="icon user" /> */}
         <button
           className="icon menu-toggle"
           onClick={() => setIsOpen(!isOpen)}
