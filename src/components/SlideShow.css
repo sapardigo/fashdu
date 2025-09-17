@@ -1,0 +1,127 @@
+/* ===== Container ===== */
+.ssd-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ===== Slider ===== */
+.ssd-slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+/* ===== Slides wrapper ===== */
+.ssd-slides {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* ===== Single Slide ===== */
+.ssd-slide {
+  flex: 0 0 100%;
+}
+
+/* ===== Image ===== */
+.ssd-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: top;  /* gambar nempel atas */
+  display: block;
+}
+
+/* ===== Arrows Kotak ===== */
+.ssd-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 0;   /* kotak, bukan elips */
+  z-index: 5;
+  transition: background 0.3s ease;
+}
+.ssd-arrow:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.ssd-prev {
+  left: 15px;
+}
+.ssd-next {
+  right: 15px;
+}
+
+/* ===== Dots ===== */
+.ssd-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.ssd-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+}
+.ssd-dot.active {
+  background: white;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .ssd-slider {
+    height: auto !important; /* tinggi ikut gambar */
+  }
+
+  .ssd-slides {
+    display: flex;           /* slide horizontal */
+    align-items: flex-start;  /* gambar nempel atas */
+  }
+
+  .ssd-slide {
+    flex: 0 0 100%;
+    display: block;
+  }
+
+  .ssd-img {
+    object-fit: contain;
+    object-position: top;    /* gambar nempel atas */
+    width: 100%;
+    height: auto;
+  }
+
+  .ssd-dots {
+    bottom: 5px;             /* naik sedikit ke dalam gambar */
+  }
+
+  .ssd-arrow {
+    font-size: 1.5rem;
+    padding: 6px 10px;
+  }
+}
+
+/* ===== Desktop ===== */
+@media (min-width: 769px) {
+  .ssd-prev {
+    left: 25px;
+  }
+
+  .ssd-next {
+    right: 25px;
+  }
+
+  .ssd-dots {
+    bottom: 15px;
+  }
+}

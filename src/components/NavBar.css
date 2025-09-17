@@ -1,0 +1,141 @@
+/* ===== Navbar Container ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 20px;
+  background: #ffffff;
+  /* background: #611212; */
+  border-bottom: 2px solid #e0e0e0;
+  /* position: relative; */
+  position: sticky;
+  z-index: 10;
+}
+
+/* ===== Logo ===== */
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: #333;
+  /* color: #ffffff; */
+}
+
+/* ===== Search ===== */
+.search {
+  flex: 1;
+  margin: 0 20px; /* kasih jarak kiri-kanan */
+  
+}
+
+.search input {
+  width: 100%;
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  
+  
+}
+
+/* ===== Nav Items ===== */
+.nav-items {
+    margin-left: 20px;
+  display: flex;
+  gap: 0px;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: #333;
+  /* color: #ffffff; */
+  font-weight: 500;
+  padding: 6px 10px;
+  transition: color 0.3s;
+}
+
+.nav-items a:hover {
+  color: #e63946;
+  font-size: larger;
+  border-left: 2px solid #e63946;
+}
+
+/* ===== Actions ===== */
+.actions {
+  display: flex;
+  align-items: center;
+  margin-left: 20px; /* kasih jarak dari nav links */
+}
+
+.icon {
+  font-size: 28px;
+  cursor: pointer;
+  color: #444;
+  /* color: #ffffff; */
+  border: none;
+  background: none;
+  margin-left: 10px;
+  
+}
+
+/* ===== Mobile Rules ===== */
+@media (max-width: 768px) {
+  .search {
+    /* display: none; search disembunyikan di mobile */
+
+    order: 0;       /* pindah ke urutan paling bawah dalam flex */
+  flex: flex;     /* biar tidak memaksa space */
+  width: auto;    /* full width */
+  margin: 0px 5px;
+  padding: 0 10px;
+  
+  }
+
+  .nav-items {
+    /* display: none; */
+    flex-direction: column;
+    position: absolute;
+    top: 55px; /* tinggi navbar */
+    /* left: 0; */
+    right: 0;
+    width: 40%;
+    background: #fff;
+    /* background: #611212; */
+    border-top: 1px solid #eee;
+    
+
+    /* buat transisi */
+    max-height: 0;          /* default tertutup */
+    overflow: hidden;       /* biar tidak bocor */
+    opacity: 0;             /* transparan saat tertutup */
+    visibility: hidden;     /* tidak bisa diklik */
+    transition: all 0.3s ease; /* transisi lembut */
+  }
+
+  .nav-items.open {
+    /* display: flex; */
+    max-height: 500px;   /* cukup besar untuk muat semua link */
+    opacity: 1;          /* tampil */
+    visibility: visible; /* aktif */
+    
+    
+  }
+
+  .nav-items a {
+    padding: 12px 40px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .menu-toggle {
+    padding-top: 5px;
+    display: block;
+    margin-left: 10px;
+    
+  }
+}
+
+/* ===== Desktop Rules ===== */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* hide hamburger */
+  }
+}

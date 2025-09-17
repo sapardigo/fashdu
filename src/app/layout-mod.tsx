@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { siteUrl } from "../../lib/config";
-import NavBar from "@/components/NavBar";
-import SlideShow from "@/components/SlideShow";
 
+import { siteUrl } from "../../lib/config";
 
 
 const geistSans = Geist({
@@ -16,7 +14,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-// file metadata start
+
 export const metadata: Metadata = {
   title: "FASHDU - Perbarui Darahmu, Sehatkan Tubuhmu!",
   description:
@@ -58,7 +56,6 @@ export const metadata: Metadata = {
     canonical: "https://fashdu.com",
   },
 };
-// file metadata ends 
 
 export default function RootLayout({
   children,
@@ -70,8 +67,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavBar/>
-        <SlideShow/>
         {children}
       </body>
     </html>
