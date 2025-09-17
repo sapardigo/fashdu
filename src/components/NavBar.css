@@ -39,7 +39,7 @@
 
 /* ===== Nav Items ===== */
 .nav-items {
-    margin:0 15px;
+    margin-left: 15px;
   display: flex;
   gap: 0px;
 }
