@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import SlideShow from "@/components/SlideShow";
+import ShareWhatsApp from "@/components/ShareWhatsapp";
 
 // ----- FONT CONFIG -----
 const geistSans = Geist({
@@ -82,6 +83,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NavBar />
         <SlideShow />
+        <ShareWhatsApp/>
         {children}
       </body>
     </html>
