@@ -1,17 +1,14 @@
 export default function ShareWhatsApp() {
   // Teks yang ingin dibagikan
   const text = encodeURIComponent(
-    "FASHDU - Perbarui Darahmu, Sehatkan Tubuhmu!"
+    "FASHDU - Perbarui Darahmu, Sehatkan Tubuhmu! "
   );
 
   // URL halaman
   const url = encodeURIComponent("https://fashdu.vercel.app");
 
-  // Line break
-  const lineBreak = "%0A"; // ini akan membuat baris baru
-
-  // Link WhatsApp dengan jarak/line break
-  const waLink = `https://wa.me/?text=${text}${lineBreak}${url}`;
+  // Link WhatsApp
+  const waLink = `https://wa.me/?text=${text}%20${url}`;
 
   return (
     <div style={{ marginTop: "20px" }}>

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import SlideShow from "@/components/SlideShow";
+import ShareWhatsApp from "@/components/ShareWhatsapp-1";
 
 // ----- FONT CONFIG -----
 const geistSans = Geist({
@@ -18,13 +19,23 @@ const geistMono = Geist_Mono({
 // ----- SITE URL -----
 const siteUrl = "https://fashdu.vercel.app";
 
-// ----- OG IMAGE -----
-const ogImage = {
-  url: `${siteUrl}/images/og/og-image.jpg`, // 🔹 Absolute URL HTTPS
-  width: 1200,
-  height: 630,
-  alt: "Logo Klinik Fashdu Jogja",
-};
+// ----- HARD-CODED OG IMAGES -----
+// 🔹 URL lengkap agar sosial media & WhatsApp bisa fetch
+const ogImages = [
+  {
+    url: `${siteUrl}/images/og/og-rubah.png`,
+    
+    width: 1200,
+    height: 630,
+    alt: "Logo Klinik Fashdu Jogja",
+  },
+  {
+    url: `${siteUrl}/images/og/og-fallback.jpg`,
+    width: 1200,
+    height: 630,
+    alt: "Fallback Logo Klinik Fashdu Jogja",
+  },
+];
 
 // ----- METADATA -----
 export const metadata: Metadata = {
@@ -39,7 +50,7 @@ export const metadata: Metadata = {
       "FASHDU adalah metode kesehatan tradisional untuk memperbarui darah dan menjaga tubuh tetap sehat. Temukan informasi lengkap hanya di Klinik Fashdu Jogja.",
     url: siteUrl,
     siteName: "Fashdu Jogja",
-    images: [ogImage],
+    images: ogImages, // 🔹 OG image + fallback
     locale: "id_ID",
     type: "website",
   },
@@ -48,7 +59,7 @@ export const metadata: Metadata = {
     title: "FASHDU - Perbarui Darahmu, Sehatkan Tubuhmu!",
     description:
       "FASHDU adalah metode kesehatan tradisional untuk memperbarui darah dan menjaga tubuh tetap sehat.",
-    images: [ogImage.url],
+    images: ogImages.map((img) => img.url),
     creator: "@fashdu",
   },
   robots: {
@@ -63,14 +74,16 @@ export const metadata: Metadata = {
 // ----- ROOT LAYOUT -----
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
+        
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NavBar />
         <SlideShow />
+        <ShareWhatsApp/>
         {children}
       </body>
     </html>
