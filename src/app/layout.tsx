@@ -30,13 +30,13 @@ const ogImage = {
 
 // ----- METADATA -----
 export const metadata: Metadata = {
-  title: "FASHDU - Perbarui Darahmu, Sehatkan Tubuhmu!",
+  title: "FASHDU - Sehatkan Tubuhmu!",
   description:
     "FASHDU adalah metode kesehatan tradisional untuk memperbarui darah dan menjaga tubuh tetap sehat. Temukan informasi lengkap hanya di Klinik Fashdu Jogja.",
   keywords: ["Fashdu", "Klinik Fashdu Jogja", "Terapi darah", "Kesehatan"],
   authors: [{ name: "Klinik Fashdu Jogja" }],
   openGraph: {
-    title: "FASHDU - Perbarui Darahmu, Sehatkan Tubuhmu!",
+    title: "FASHDU - Sehatkan Tubuhmu!",
     description:
       "FASHDU adalah metode kesehatan klasik untuk memperbarui darah dan menjaga tubuh tetap sehat. Temukan informasi lengkap hanya di fashdu.com",
     url: siteUrl,
