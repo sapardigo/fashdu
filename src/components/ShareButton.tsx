@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
-// 🔹 Bisa ganti dengan ikon SVG kecil atau image dari public folder
+// 🔹 Taruh icon di public/icons/
 const icons: Record<string, string> = {
-  WhatsApp: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
-  Facebook: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
-  Twitter: "https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg",
+  WhatsApp: "/icons/whatsapp.svg",
+  Facebook: "/icons/facebook.svg",
+  Twitter: "/icons/twitter.svg",
 };
 
 export default function ShareButton() {
@@ -18,25 +19,14 @@ export default function ShareButton() {
   const pageUrl = encodeURIComponent("https://fashdu.vercel.app");
 
   const links = [
-    {
-      name: "WhatsApp",
-      url: `https://wa.me/?text=${text}${pageUrl}`,
-      color: "#25D366",
-    },
-    {
-      name: "Facebook",
-      url: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`,
-      color: "#3b5998",
-    },
-    {
-      name: "Twitter",
-      url: `https://twitter.com/intent/tweet?url=${pageUrl}&text=${text}`,
-      color: "#1da1f2",
-    },
+    { name: "WhatsApp", url: `https://wa.me/?text=${text}${pageUrl}`, color: "#25D366" },
+    { name: "Facebook", url: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`, color: "#3b5998" },
+    { name: "Twitter", url: `https://twitter.com/intent/tweet?url=${pageUrl}&text=${text}`, color: "#1da1f2" },
   ];
 
   return (
     <div style={{ position: "relative", display: "inline-block" }}>
+      {/* Tombol utama */}
       <button
         onClick={() => setOpen(!open)}
         style={{
@@ -52,6 +42,7 @@ export default function ShareButton() {
         Share
       </button>
 
+      {/* Dropdown icon */}
       {open && (
         <div
           style={{
@@ -64,6 +55,7 @@ export default function ShareButton() {
             boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
             zIndex: 100,
             display: "flex",
+            padding: "4px",
           }}
         >
           {links.map((link) => (
@@ -76,19 +68,22 @@ export default function ShareButton() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                padding: "6px",
                 margin: "4px",
                 borderRadius: "5px",
                 backgroundColor: link.color,
                 width: "36px",
                 height: "36px",
+                transition: "transform 0.2s",
               }}
               onClick={() => setOpen(false)}
+              onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+              onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
             >
-              <img
+              <Image
                 src={icons[link.name]}
                 alt={link.name}
-                style={{ width: "20px", height: "20px" }}
+                width={20}
+                height={20}
               />
             </a>
           ))}
