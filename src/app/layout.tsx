@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import SlideShow from "@/components/SlideShow";
+import Head from "next/head";
 
 // ----- FONT CONFIG -----
 const geistSans = Geist({
@@ -77,6 +78,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+        <Head>
+        <meta property="fb:app_id" content="1234567890" />
+      </Head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NavBar />
         <SlideShow />
