@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import SlideShow from "@/components/SlideShow";
-import ShareButton from "@/components/ShareButton";
+import ShareButton from "@/components/ShareButton-1";
 
 
 // ----- FONT CONFIG -----
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FASHDU - Perbarui Darahmu, Sehatkan Tubuhmu!",
     description:
-      "FASHDU adalah metode kesehatan tradisional untuk memperbarui darah dan menjaga tubuh tetap sehat. Temukan informasi lengkap hanya di Klinik Fashdu Jogja.",
+      "FASHDU adalah metode kesehatan klasik untuk memperbarui darah dan menjaga tubuh tetap sehat. Temukan informasi lengkap hanya di fashdu.com",
     url: siteUrl,
     siteName: "Fashdu Jogja",
     images: [ogImage],
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FASHDU - Perbarui Darahmu, Sehatkan Tubuhmu!",
+    title: "FASHDU - Sehatkan Tubuhmu!",
     description:
-      "FASHDU adalah metode kesehatan tradisional untuk memperbarui darah dan menjaga tubuh tetap sehat.",
+      "FASHDU adalah metode kesehatan klasik untuk memperbarui darah dan menjaga tubuh tetap sehat.",
     images: [ogImage.url],
     creator: "@fashdu",
   },
