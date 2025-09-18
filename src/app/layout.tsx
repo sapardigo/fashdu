@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import SlideShow from "@/components/SlideShow";
-import ShareButton from "@/components/ShareButton-1";
+import ShareButton from "@/components/ShareButton";
 
 
 // ----- FONT CONFIG -----
