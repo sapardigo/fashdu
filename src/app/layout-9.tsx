@@ -1,11 +1,10 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import SlideShow from "@/components/SlideShow";
 
-// ===== FONT CONFIG =====
+// ----- FONT CONFIG -----
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -16,25 +15,24 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ===== SITE URL & OG IMAGE =====
-const siteUrl = "https://fashdu.vercel.app"; // Ganti sesuai domainmu
-const ogImagePath = "/images/og/og-image.jpg"; // HARUS di folder public
-const ogImageUrl = `${siteUrl}${ogImagePath}`;
+// ----- SITE URL & OG IMAGE -----
+const siteUrl = "https://fashdu.vercel.app";
+const ogImageUrl = `${siteUrl}/images/og/og-image.jpg`;
 
-// ===== METADATA =====
+// ----- METADATA -----
 export const metadata: Metadata = {
-  title: "FASHDU - Perbarui Darahmu, Sehatkan Tubuhmu!",
+  title: "FASHDU - Sehatkan Tubuhmu!",
   description:
     "FASHDU adalah metode kesehatan tradisional untuk memperbarui darah dan menjaga tubuh tetap sehat. Temukan informasi lengkap hanya di Klinik Fashdu Jogja.",
   openGraph: {
-    title: "FASHDU - Perbarui Darahmu, Sehatkan Tubuhmu!",
+    title: "FASHDU - Sehatkan Tubuhmu!",
     description:
       "FASHDU adalah metode kesehatan tradisional untuk memperbarui darah dan menjaga tubuh tetap sehat.",
     url: siteUrl,
     siteName: "Fashdu Jogja",
     images: [
       {
-        url: ogImageUrl, // ABSOLUTE URL
+        url: ogImageUrl,
         width: 1200,
         height: 630,
         alt: "Logo Klinik Fashdu Jogja",
@@ -45,10 +43,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FASHDU - Perbarui Darahmu, Sehatkan Tubuhmu!",
+    title: "FASHDU - Sehatkan Tubuhmu!",
     description:
       "FASHDU adalah metode kesehatan tradisional untuk memperbarui darah dan menjaga tubuh tetap sehat.",
-    images: [ogImageUrl], // HARUS array string
+    images: [ogImageUrl],
     creator: "@fashdu",
   },
   robots: {
@@ -60,17 +58,15 @@ export const metadata: Metadata = {
   },
 };
 
-// ===== ROOT LAYOUT =====
+// ----- ROOT LAYOUT -----
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NavBar />
         <SlideShow />
         {children}
