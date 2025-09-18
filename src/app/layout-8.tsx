@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import SlideShow from "@/components/SlideShow";
+import ShareButton from "@/components/ShareButton";
+
 
 // ----- FONT CONFIG -----
 const geistSans = Geist({
@@ -15,29 +17,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ----- SITE URL & OG IMAGE -----
+// ----- SITE URL -----
 const siteUrl = "https://fashdu.vercel.app";
-const ogImageUrl = `${siteUrl}/images/og/og-image.jpg`;
+
+// ----- OG IMAGE -----
+const ogImage = {
+  url: `${siteUrl}/images/og/og-image.jpg`, // 🔹 Absolute URL HTTPS
+  width: 1200,
+  height: 630,
+  alt: "Logo Klinik Fashdu Jogja",
+};
 
 // ----- METADATA -----
 export const metadata: Metadata = {
   title: "FASHDU - Sehatkan Tubuhmu!",
   description:
     "FASHDU adalah metode kesehatan tradisional untuk memperbarui darah dan menjaga tubuh tetap sehat. Temukan informasi lengkap hanya di Klinik Fashdu Jogja.",
+  keywords: ["Fashdu", "Klinik Fashdu Jogja", "Terapi darah", "Kesehatan"],
+  authors: [{ name: "Klinik Fashdu Jogja" }],
   openGraph: {
     title: "FASHDU - Sehatkan Tubuhmu!",
     description:
-      "FASHDU adalah metode kesehatan tradisional untuk memperbarui darah dan menjaga tubuh tetap sehat.",
+      "FASHDU adalah metode kesehatan klasik untuk memperbarui darah dan menjaga tubuh tetap sehat. Temukan informasi lengkap hanya di fashdu.com",
     url: siteUrl,
     siteName: "Fashdu Jogja",
-    images: [
-      {
-        url: ogImageUrl,
-        width: 1200,
-        height: 630,
-        alt: "Logo Klinik Fashdu Jogja",
-      },
-    ],
+    images: [ogImage],
     locale: "id_ID",
     type: "website",
   },
@@ -45,8 +49,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FASHDU - Sehatkan Tubuhmu!",
     description:
-      "FASHDU adalah metode kesehatan tradisional untuk memperbarui darah dan menjaga tubuh tetap sehat.",
-    images: [ogImageUrl],
+      "FASHDU adalah metode kesehatan klasik untuk memperbarui darah dan menjaga tubuh tetap sehat.",
+    images: [ogImage.url],
     creator: "@fashdu",
   },
   robots: {
@@ -69,6 +73,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NavBar />
         <SlideShow />
+        <ShareButton /> {/* 🔹 Tombol share bercabang */}
         {children}
       </body>
     </html>
