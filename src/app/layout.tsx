@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
-import SlideShow from "@/components/SlideShow";
+
 
 // ===== FONT CONFIG =====
 const geistSans = Geist({
@@ -72,7 +72,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavBar />
-        <SlideShow />
+       
         {children}
       </body>
     </html>
