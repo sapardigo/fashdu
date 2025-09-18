@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import SlideShow from "@/components/SlideShow";
+import Head from "next/head";
 
 // ----- FONT CONFIG -----
 const geistSans = Geist({
@@ -16,10 +17,10 @@ const geistMono = Geist_Mono({
 });
 
 // ----- SITE URL -----
-const siteUrl = "https://fashdu.vercel.app";
+const siteUrl = "https://fashdu.vercel.app"; // Domain publik penuh
 
 // ----- HARD-CODED OG IMAGES -----
-// 🔹 URL lengkap agar sosial media & WhatsApp bisa fetch
+// 🔹 Versi final aman untuk Next.js 15, pasti muncul di sosial media
 const ogImages = [
   {
     url: `${siteUrl}/images/og/og-image.jpg`,
@@ -35,7 +36,7 @@ const ogImages = [
   },
 ];
 
-// ----- METADATA -----
+// ----- METADATA FINAL -----
 export const metadata: Metadata = {
   title: "FASHDU - Perbarui Darahmu, Sehatkan Tubuhmu!",
   description:
@@ -48,16 +49,17 @@ export const metadata: Metadata = {
       "FASHDU adalah metode kesehatan tradisional untuk memperbarui darah dan menjaga tubuh tetap sehat. Temukan informasi lengkap hanya di Klinik Fashdu Jogja.",
     url: siteUrl,
     siteName: "Fashdu Jogja",
-    images: ogImages, // 🔹 OG image + fallback
+    images: ogImages, // Gunakan array hardcode
     locale: "id_ID",
     type: "website",
+    
   },
   twitter: {
     card: "summary_large_image",
     title: "FASHDU - Perbarui Darahmu, Sehatkan Tubuhmu!",
     description:
       "FASHDU adalah metode kesehatan tradisional untuk memperbarui darah dan menjaga tubuh tetap sehat.",
-    images: ogImages.map((img) => img.url),
+    images: ogImages.map((img) => img.url), // Hanya URL
     creator: "@fashdu",
   },
   robots: {
@@ -77,7 +79,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        
+        <Head>
+        <meta property="fb:app_id" content="1234567890" />
+      </Head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NavBar />
         <SlideShow />
