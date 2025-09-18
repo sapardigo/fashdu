@@ -22,8 +22,8 @@ const siteUrl = "https://fashdu.vercel.app";
 // 🔹 URL lengkap agar sosial media & WhatsApp bisa fetch
 const ogImages = [
   {
-    // url: `${siteUrl}/images/og/og-image.jpg`,
-    url: "https://fashdu.vercel.app/images/og/og-image.jpg",
+    url: `${siteUrl}/images/og/og-rubah.png`,
+    
     width: 1200,
     height: 630,
     alt: "Logo Klinik Fashdu Jogja",
