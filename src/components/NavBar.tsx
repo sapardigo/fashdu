@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { MdMenu, MdClose, MdShare } from "react-icons/md";  // , MdAccountCircle <- dikeluarkan dari dalam {}
 import "./NavBar.css";
+import Link from "next/link";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ export default function NavBar() {
   return (
     <nav className="navbar">
       {/* Logo */}
-      <div className="logo">FASHDU</div>
+      <div className="brand"><Link href="">FASHDU</Link></div>
 
       {/* Search */}
       <div className="search">
