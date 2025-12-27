@@ -10,17 +10,22 @@ export default function HeroSection() {
     >
       {/* Image Hero */}
       <div className="absolute inset-0 -z-10">
-                <Image
+        <Image
           src="/images/hero-terapi.webp"
           alt="Pendekatan terapi profesional dengan suasana layanan yang tenang"
           width={1600}
           height={900}
           priority
-          sizes="(max-width: 768px) 100vw,
-                (max-width: 1200px) 90vw,
-                1600px"
+          sizes="
+            (max-width: 480px) 100vw,
+            (max-width: 768px) 100vw,
+            (max-width: 1024px) 95vw,
+            (max-width: 1280px) 90vw,
+            1600px
+          "
           className="h-full w-full object-cover"
         />
+
 
         {/* Overlay agar teks terbaca */}
         <div className="absolute inset-0 bg-black/35" />
@@ -30,7 +35,7 @@ export default function HeroSection() {
       <div className="mx-auto max-w-6xl px-6 py-28 text-white">
         {/* Brand */}
         <p className="mb-4 text-sm uppercase tracking-wide text-white/80">
-          FASHDU Sapardi
+          Fashdu Sapardi
         </p>
 
         {/* H1 (SATU-SATUNYA DI BERANDA) */}
