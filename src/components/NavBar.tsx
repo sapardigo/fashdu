@@ -11,7 +11,12 @@ export default function NavBar() {
   return (
     <nav className="navbar">
       {/* Logo */}
-      <div className="brand"><Link href="">FASHDU</Link></div>
+      <div className="brand">
+      <Link href="/" className="no-underline hover:no-underline">
+        FASHDU
+      </Link>
+      </div>
+
 
       {/* Search */}
       <div className="search">
