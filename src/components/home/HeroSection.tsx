@@ -23,7 +23,8 @@ export default function HeroSection() {
             (max-width: 1280px) 90vw,
             1600px
           "
-          className="h-full w-full object-cover"
+          // className="h-full w-full object-cover"
+          style={{width:"100%", height:"auto"}}
         />
 
 
