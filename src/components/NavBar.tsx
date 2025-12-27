@@ -21,11 +21,10 @@ export default function NavBar() {
       {/* Navigation */}
       <div className={`nav-items ${isOpen ? "open" : ""}`}>
         <a href="#">Beranda</a>
-        <a href="#">Profile</a>
+        <a href="#">Proses</a>
         <a href="#">Layanan</a>
-        <a href="#">Tips</a>
-        <a href="#">Event</a>
-        <a href="#">Reservasi</a>
+        <a href="#">Artikel</a>
+        <a href="#">Daftar Terapi</a>
         <a href="#">Kontak</a>
         
         
