@@ -2,18 +2,26 @@
   "name": "fashdu-app",
   "version": "0.1.0",
   "private": true,
+
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=20 <21"
+  },
+
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
+
   "dependencies": {
     "next": "15.5.9",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-icons": "^5.5.0"
   },
+
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
@@ -23,17 +31,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "packageManager": "pnpm@9.15.4",
-    "engines": {
-    "node": ">=20"
-}
+    "typescript": "^5"
   }
-
-  
-
-
-  
-
-
 }
